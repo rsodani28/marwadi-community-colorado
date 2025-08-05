@@ -20,6 +20,7 @@ interface Event {
 export default function Events() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
+  // Note: upcomingEvents is kept for future use when new events are planned
   const upcomingEvents: Event[] = [];
 
   const pastEvents = [

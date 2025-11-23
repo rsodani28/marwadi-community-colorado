@@ -29,7 +29,7 @@ export default function Events() {
       time: "Evening Event",
       location: "Garnish Fusion Indian Cusine",
       category: "social",
-      description: "An intimate evening under warm lights with family-style dishes, festive music, and a cozy holiday gift swap to celebrate our community spirit.",
+      description: "An intimate evening under warm lights with family-style dishes, festive music, and a cozy holiday party to celebrate our community spirit.",
       families: "40 families",
       photosLink: "#",
       status: "upcoming",

@@ -7,12 +7,12 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Marwadi Community of Colorado</title>
-        <meta name="description" content="Welcome to the Marwadi Community of Colorado - Connecting our heritage, building our future" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Marwari Community of Colorado</title>
+        <meta name="description" content="Welcome to the Marwari Community of Colorado - Connecting our heritage, building our future" />
+        <link rel="icon" href="/MarwariCClogo.jpg" />
       </Head>
       <main className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 relative overflow-hidden">
-        {/* Traditional Marwadi Pattern Background */}
+        {/* Traditional Marwari Pattern Background */}
         <div className="absolute inset-0 opacity-10">
           {/* Geometric Patterns */}
           <div className="absolute top-20 left-20 w-32 h-32 border-4 border-orange-300 transform rotate-45 animate-pulse-once"></div>
@@ -39,14 +39,14 @@ export default function Home() {
               <div className="flex items-center space-x-4">
                 <Image 
                   src="/MarwariCClogo.jpg" 
-                  alt="Marwadi Community Logo" 
+                  alt="Marwari Community Logo" 
                   width={56}
                   height={56}
                   className="h-14 w-14 rounded-full object-cover border-3 border-orange-300 shadow-lg hover:scale-110 transition-transform duration-300"
                 />
                 <div>
                   <h1 className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                    Marwadi Community of Colorado
+                    Marwari Community of Colorado
                   </h1>
                 </div>
               </div>
@@ -62,6 +62,9 @@ export default function Home() {
                 </Link>
                 <Link href="/signup" className="text-gray-700 hover:text-orange-600 transition-all duration-300 font-medium hover:border-b-2 hover:border-orange-300 hover:scale-105">
                   Sign Up
+                </Link>
+                <Link href="/financials" className="text-gray-700 hover:text-orange-600 transition-all duration-300 font-medium hover:border-b-2 hover:border-orange-300 hover:scale-105">
+                  Financials
                 </Link>
                 <Link href="/support" className="text-gray-700 hover:text-orange-600 transition-all duration-300 font-medium hover:border-b-2 hover:border-orange-300 hover:scale-105">
                   Support Us
@@ -82,13 +85,13 @@ export default function Home() {
                   <h2 className="text-5xl font-extrabold tracking-tight text-gray-900 sm:text-6xl animate-slide-in-left">
                     Welcome
                   </h2>
-                  <p className="text-lg text-orange-600 font-medium">To the Marwadi Community</p>
+                  <p className="text-lg text-orange-600 font-medium">To the Marwari Community</p>
                 </div>
               </div>
               
               <h3 className="text-4xl font-bold text-gray-800 mb-2 animate-slide-in-right">
                 <span className="bg-gradient-to-r from-orange-600 via-red-500 to-pink-500 bg-clip-text text-transparent">
-                  Marwadi
+                  Marwari
                 </span> Community
               </h3>
               <p className="text-xl text-orange-600 font-semibold mb-6">of Colorado</p>
@@ -132,7 +135,7 @@ export default function Home() {
               <div className="relative z-10 bg-white/95 backdrop-blur-sm p-4 rounded-2xl shadow-2xl border border-orange-200 hover:shadow-3xl transition-all duration-500 transform hover:scale-105">
                 <Image 
                   src="/MarwarResize.jpg" 
-                  alt="Marwadi Community of Colorado" 
+                  alt="Marwari Community of Colorado" 
                   width={600}
                   height={400}
                   className="w-full max-h-96 rounded-xl object-contain"
@@ -176,7 +179,7 @@ export default function Home() {
                 
                 <div className="bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-orange-200 shadow-xl mb-8">
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    Experience the vibrant traditions of our Marwadi community through festivals, 
+                    Experience the vibrant traditions of our Marwari community through festivals, 
                     cultural celebrations, and gatherings that bring our heritage to life in Colorado.
                   </p>
                   
@@ -266,7 +269,7 @@ export default function Home() {
                 
                 <div className="bg-blue-50/90 backdrop-blur-sm p-8 rounded-2xl border border-blue-200 shadow-xl mb-8">
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    Connect with fellow Marwadi community members across Colorado. Build meaningful 
+                    Connect with fellow Marwari community members across Colorado. Build meaningful 
                     friendships, professional networks, and support systems that last a lifetime.
                   </p>
                   
@@ -322,7 +325,7 @@ export default function Home() {
                 
                 <div className="bg-green-50/90 backdrop-blur-sm p-8 rounded-2xl border border-green-200 shadow-xl mb-8">
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    Experience the power of unity in our Marwadi community. Together, we preserve 
+                    Experience the power of unity in our Marwari community. Together, we preserve 
                     traditions, support each other, and create a home away from home in Colorado.
                   </p>
                   
@@ -459,7 +462,7 @@ export default function Home() {
                   Ready to Join Our Community?
                 </h4>
                 <p className="text-gray-600 mb-6">
-                  Be part of something special. Connect with fellow Marwadi families and experience the warmth of our community.
+                  Be part of something special. Connect with fellow Marwari families and experience the warmth of our community.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link

@@ -11,13 +11,13 @@ export default function Support() {
       id: "qr1",
       name: "Primary Donation",
       image: "/QRs/1943ecb1-f6ca-4d38-b6b2-924b0e5495b3.png",
-      description: "Scan to support the Marwadi Community of Colorado"
+      description: "Scan to support the Marwari Community of Colorado"
     },
     {
       id: "qr2", 
       name: "Alternative Donation",
       image: "/QRs/2770e0c2-8cab-472d-b6a0-77e9f1eed6f1.png",
-      description: "Another way to donate to the Marwadi Community of Colorado"
+      description: "Another way to donate to the Marwari Community of Colorado"
     }
   ];
 
@@ -28,9 +28,9 @@ export default function Support() {
   return (
     <>
       <Head>
-        <title>Support Us - Marwadi Community of Colorado</title>
-        <meta name="description" content="Support the Marwadi Community of Colorado through donations and volunteering" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Support Us - Marwari Community of Colorado</title>
+        <meta name="description" content="Support the Marwari Community of Colorado through donations and volunteering" />
+        <link rel="icon" href="/MarwariCClogo.jpg" />
       </Head>
       
       <main className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 relative overflow-hidden">
@@ -49,13 +49,13 @@ export default function Support() {
               <div className="flex items-center space-x-4">
                 <Image 
                   src="/MarwariCClogo.jpg" 
-                  alt="Marwadi Community Logo" 
+                  alt="Marwari Community Logo" 
                   width={48}
                   height={48}
                   className="h-12 w-12 rounded-full object-cover border-2 border-orange-300"
                 />
                 <Link href="/" className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                  Marwadi Community of Colorado
+                  Marwari Community of Colorado
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-6">
@@ -70,6 +70,9 @@ export default function Support() {
                 </Link>
                 <Link href="/signup" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
                   Sign Up
+                </Link>
+                <Link href="/financials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
+                  Financials
                 </Link>
                 <Link href="/support" className="text-gray-700 hover:text-orange-600 transition-colors font-medium border-b-2 border-orange-500">
                   Support Us
@@ -91,7 +94,7 @@ export default function Support() {
               Support Our Community
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Help us grow and strengthen the Marwadi Community of Colorado through your generous 
+              Help us grow and strengthen the Marwari Community of Colorado through your generous 
               donations. Your support helps preserve our heritage, organize community events, and build a brighter future for our families.
             </p>
           </div>
@@ -100,7 +103,7 @@ export default function Support() {
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-8 border border-orange-200">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Donate to the <span className="text-orange-600">Marwadi Community of Colorado</span>
+                Donate to the <span className="text-orange-600">Marwari Community of Colorado</span>
               </h2>
               <p className="text-lg text-gray-600 mb-6">
                 Scan any of the QR codes below to make a secure donation. Your contribution directly supports our community events, cultural programs, and family activities.
@@ -157,7 +160,7 @@ export default function Support() {
               <div className="bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200 rounded-2xl p-6">
                 <h3 className="text-lg font-bold text-gray-900 mb-3">💝 Thank You for Your Support!</h3>
                 <p className="text-gray-700 mb-4">
-                  Every donation, no matter the size, makes a meaningful difference in preserving our Marwadi heritage and strengthening our community bonds in Colorado.
+                  Every donation, no matter the size, makes a meaningful difference in preserving our Marwari heritage and strengthening our community bonds in Colorado.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
                   <span>✓ Secure payment processing</span>

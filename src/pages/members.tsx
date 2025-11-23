@@ -281,9 +281,9 @@ export default function Members() {
   return (
     <>
       <Head>
-        <title>Members - Marwadi Community of Colorado</title>
-        <meta name="description" content="Connect with members of the Marwadi Community of Colorado" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Members - Marwari Community of Colorado</title>
+        <meta name="description" content="Connect with members of the Marwari Community of Colorado" />
+        <link rel="icon" href="/MarwariCClogo.jpg" />
       </Head>
       
       <main className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 relative overflow-hidden">
@@ -302,13 +302,13 @@ export default function Members() {
               <div className="flex items-center space-x-4">
                 <Image 
                   src="/MarwariCClogo.jpg" 
-                  alt="Marwadi Community Logo" 
+                  alt="Marwari Community Logo" 
                   width={48}
                   height={48}
                   className="h-12 w-12 rounded-full object-cover border-2 border-orange-300"
                 />
                 <Link href="/" className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                  Marwadi Community of Colorado
+                  Marwari Community of Colorado
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-6">
@@ -323,6 +323,9 @@ export default function Members() {
                 </Link>
                 <Link href="/signup" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
                   Sign Up
+                </Link>
+                <Link href="/financials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
+                  Financials
                 </Link>
                 <Link href="/support" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
                   Support Us
@@ -344,7 +347,7 @@ export default function Members() {
               Our Community Families
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Meet the wonderful families that make up our Marwadi community in Colorado
+              Meet the wonderful families that make up our Marwari community in Colorado
             </p>
           </div>
 
@@ -458,7 +461,7 @@ export default function Members() {
                   Want to Join Our Community?
                 </h2>
                 <p className="text-gray-600 mb-8 text-lg leading-relaxed">
-                  Bring your family into our growing Marwadi community in Colorado!<br />
+                  Bring your family into our growing Marwari community in Colorado!<br />
                   <span className="text-orange-600">Connect with other families and preserve our beautiful traditions together.</span>
                 </p>
                 <Link

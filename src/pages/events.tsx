@@ -21,17 +21,31 @@ export default function Events() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   // Note: upcomingEvents is kept for future use when new events are planned
-  const upcomingEvents: Event[] = [];
+  const upcomingEvents: Event[] = [
+    {
+      id: 1,
+      title: "Marwari Holiday Party",
+      date: "December 7th, 2025",
+      time: "Evening Event",
+      location: "Garnish Fusion Indian Cusine",
+      category: "social",
+      description: "An intimate evening under warm lights with family-style dishes, festive music, and a cozy holiday gift swap to celebrate our community spirit.",
+      families: "40 families",
+      photosLink: "#",
+      status: "upcoming",
+      image: "/MarwarResize.jpg"
+    }
+  ];
 
   const pastEvents = [
     {
       id: 5,
-      title: "Marwadi Gala",
+      title: "Marwari Gala",
       date: "April 19, 2025",
       time: "Evening Event",
       location: "Lantern House",
       category: "festival",
-      description: "A spectacular evening celebrating our Marwadi heritage with traditional performances, dinner, and community connections.",
+      description: "A spectacular evening celebrating our Marwari heritage with traditional performances, dinner, and community connections.",
       families: "26 families",
       photosLink: "https://photos.app.goo.gl/Yv7uwTpG4KykJmDd6",
       status: "completed",
@@ -39,7 +53,7 @@ export default function Events() {
     },
     {
       id: 6,
-      title: "Marwadi Summer Picnic",
+      title: "Marwari Summer Picnic",
       date: "July 20, 2025",
       time: "Day Event",
       location: "Cherry Creek State Park",
@@ -63,9 +77,9 @@ export default function Events() {
   return (
     <>
       <Head>
-        <title>Events - Marwadi Community of Colorado</title>
-        <meta name="description" content="Upcoming events and activities for the Marwadi Community of Colorado" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Events - Marwari Community of Colorado</title>
+        <meta name="description" content="Upcoming events and activities for the Marwari Community of Colorado" />
+        <link rel="icon" href="/MarwariCClogo.jpg" />
       </Head>
       
       <main className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 relative overflow-hidden">
@@ -84,13 +98,13 @@ export default function Events() {
               <div className="flex items-center space-x-4">
                 <Image 
                   src="/MarwariCClogo.jpg" 
-                  alt="Marwadi Community Logo" 
+                  alt="Marwari Community Logo" 
                   width={48}
                   height={48}
                   className="h-12 w-12 rounded-full object-cover border-2 border-orange-300"
                 />
                 <Link href="/" className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                  Marwadi Community of Colorado
+                  Marwari Community of Colorado
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-6">
@@ -105,6 +119,9 @@ export default function Events() {
                 </Link>
                 <Link href="/signup" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
                   Sign Up
+                </Link>
+                <Link href="/financials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
+                  Financials
                 </Link>
                 <Link href="/support" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
                   Support Us
@@ -160,15 +177,75 @@ export default function Events() {
               </h2>
             </div>
             
-            {/* Coming Soon Box */}
-            <div className="bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-200 rounded-2xl p-12 text-center shadow-lg backdrop-blur-sm">
-              <div className="text-6xl mb-6">🎉</div>
-              <h3 className="text-2xl font-bold text-orange-800 mb-4">Coming Soon!</h3>
-              <p className="text-lg text-orange-700 mb-6">
-                We&apos;re currently planning exciting new events for our community. 
-                Stay tuned for updates on upcoming celebrations, workshops, and gatherings!
-              </p>
-            </div>
+            {upcomingEvents.filter(event => selectedCategory === "all" || event.category === selectedCategory).length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {upcomingEvents
+                  .filter(event => selectedCategory === "all" || event.category === selectedCategory)
+                  .map((event) => (
+                    <div key={event.id} className="group bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-orange-200">
+                      <div className="relative h-48 bg-gradient-to-br from-orange-200 to-red-200 flex items-center justify-center overflow-hidden">
+                        <Image 
+                          src={event.image || "/Mar2.png"} 
+                          alt={event.title}
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent"></div>
+                        <div className="absolute top-4 right-4">
+                          <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs font-bold">
+                            UPCOMING
+                          </span>
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-3">
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                            event.category === 'festival' ? 'bg-purple-100 text-purple-800' :
+                            event.category === 'networking' ? 'bg-blue-100 text-blue-800' :
+                            event.category === 'education' ? 'bg-green-100 text-green-800' :
+                            'bg-orange-50 text-orange-800'
+                          }`}>
+                            {event.category === 'festival' ? '🎭 Festival' :
+                             event.category === 'networking' ? '🤝 Networking' :
+                             event.category === 'education' ? '📚 Education' :
+                             '👥 Social'}
+                          </span>
+                          <span className="text-orange-600 font-bold text-sm">✓ {event.families}</span>
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
+                          {event.title}
+                        </h3>
+                        <div className="space-y-2 mb-4">
+                          <p className="text-sm text-orange-700 flex items-center font-medium">
+                            <span className="mr-2">🗓</span> {event.date}
+                          </p>
+                          <p className="text-sm text-gray-600 flex items-center">
+                            <span className="mr-2">🕒</span> {event.time}
+                          </p>
+                          <p className="text-sm text-gray-600 flex items-center">
+                            <span className="mr-2">📍</span> {event.location}
+                          </p>
+                        </div>
+                        <p className="text-gray-700 mb-6 leading-relaxed">{event.description}</p>
+                        <div className="flex flex-col md:flex-row gap-3">
+                          <span className="flex-1 inline-block text-center bg-gradient-to-r from-orange-500 to-red-500 text-white py-3 px-4 rounded-lg shadow-lg font-semibold">
+                            📅 Save the Date
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                ))}
+              </div>
+            ) : (
+              <div className="bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-200 rounded-2xl p-12 text-center shadow-lg backdrop-blur-sm">
+                <div className="text-6xl mb-6">🎉</div>
+                <h3 className="text-2xl font-bold text-orange-800 mb-4">Coming Soon!</h3>
+                <p className="text-lg text-orange-700 mb-6">
+                  We&apos;re currently planning exciting new events for our community. 
+                  Stay tuned for updates on upcoming celebrations, workshops, and gatherings!
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Past Events Section */}

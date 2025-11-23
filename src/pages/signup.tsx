@@ -10,7 +10,7 @@ export default function SignUp() {
     benefits: [
       "Access to all community events for the entire family",
       "Support community event organization and activities",
-      "Connect with other Marwadi families in Colorado",
+      "Connect with other Marwari families in Colorado",
       "Priority registration for popular events",
       "Quarterly community newsletter",
       "Access to member-only family gatherings",
@@ -22,9 +22,9 @@ export default function SignUp() {
   return (
     <>
       <Head>
-        <title>Sign Up - Marwadi Community of Colorado</title>
-        <meta name="description" content="Join the Marwadi Community of Colorado and become part of our vibrant community" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Sign Up - Marwari Community of Colorado</title>
+        <meta name="description" content="Join the Marwari Community of Colorado and become part of our vibrant community" />
+        <link rel="icon" href="/MarwariCClogo.jpg" />
       </Head>
       
       <main className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 relative overflow-hidden">
@@ -43,13 +43,13 @@ export default function SignUp() {
               <div className="flex items-center space-x-4">
                 <Image 
                   src="/MarwariCClogo.jpg" 
-                  alt="Marwadi Community Logo" 
+                  alt="Marwari Community Logo" 
                   width={48}
                   height={48}
                   className="h-12 w-12 rounded-full object-cover border-2 border-orange-300"
                 />
                 <Link href="/" className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                  Marwadi Community of Colorado
+                  Marwari Community of Colorado
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-6">
@@ -64,6 +64,9 @@ export default function SignUp() {
                 </Link>
                 <Link href="/signup" className="text-gray-700 hover:text-orange-600 transition-colors font-medium border-b-2 border-orange-500">
                   Sign Up
+                </Link>
+                <Link href="/financials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
+                  Financials
                 </Link>
                 <Link href="/support" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
                   Support Us
@@ -85,7 +88,7 @@ export default function SignUp() {
               Join Our Family Community
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Bring your family into our vibrant Marwadi community in Colorado
+              Bring your family into our vibrant Marwari community in Colorado
             </p>
           </div>
 
@@ -127,20 +130,20 @@ export default function SignUp() {
             <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-8 border border-orange-200">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Family Registration Form</h2>
               <p className="text-gray-600 mb-6 text-center">
-                Please fill out our official registration form below to join the Marwadi Community of Colorado
+                Please fill out our official registration form below to join the Marwari Community of Colorado
               </p>
               
               {/* Embedded Google Form */}
               <div className="flex justify-center">
                 <iframe 
-                  src="https://docs.google.com/forms/d/e/1FAIpQLSfyQ0Yon94j882q3zDZSyfopCaCv2PUY50ui7POm0c0EETEDA/viewform?embedded=true" 
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSdUZkmTXw3FEJNA24TsnjmI8sZe8uFMAgLHecj1Axqc_wDmVw/viewform?embedded=true" 
                   width="640" 
                   height="646" 
                   frameBorder="0" 
                   marginHeight={0} 
                   marginWidth={0}
                   className="border border-gray-300 rounded-lg shadow-sm max-w-full"
-                  title="Marwadi Community Registration Form"
+                  title="Marwari Community Registration Form"
                 >
                   Loading…
                 </iframe>

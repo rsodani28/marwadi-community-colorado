@@ -3,279 +3,93 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
+type Family = {
+  id: number;
+  familyName: string;
+  headOfFamily: string;
+  members: string;
+  joinDate: string;
+  title: string;
+  bio: string;
+  profileImage: string;
+};
+
+const families: Family[] = [
+  {
+    id: 1,
+    familyName: "The Sodani Family",
+    headOfFamily: "Shivani Sodani",
+    members: "Shivani, Saurabh, Dhruv, Rishabh Sodani",
+    joinDate: "2025",
+    title: "Community Member",
+    bio: "Dil se Marwari, our life is khana, gana, and a lifelong love affair with numbers. Phone: 7202179139",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/unnamed - Shivani Sodani.jpg")
+  },
+  {
+    id: 2,
+    familyName: "The Javeria Family",
+    headOfFamily: "Manish Javeria",
+    members: "Manish Javeria",
+    joinDate: "2025",
+    title: "Community Member",
+    bio: "We are a Jain family from Udaipur! Phone: 7206186872",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/7fe2d88c-9a41-4ccf-a9db-3afd20d52c19 - Ruchi Javeria.jpeg")
+  },
+  {
+    id: 3,
+    familyName: "The Jain Family",
+    headOfFamily: "Praful Jain",
+    members: "Praful Jain, Archana, Bhupin, Bhushali",
+    joinDate: "2025",
+    title: "Community Member",
+    bio: "Marwari originally from Jodhpur, living in Pune in India. Phone: 7204013450",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/IMG_6447 - PJ Jain.jpeg")
+  },
+  {
+    id: 4,
+    familyName: "The Gupta Family",
+    headOfFamily: "Sachin Gupta",
+    members: "Sachin Gupta, Neha Gupta, Ananya Gupta, Anay Gupta",
+    joinDate: "2025",
+    title: "Community Member",
+    bio: "Sachin born and brought up in Jaipur. Food, festival and fun. Daal bati, gatte, ghewar, you name it, our family enjoys these delicacies. Phone: 650-963-6455",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/20250412_194602(1) - Neha Gupta.jpg")
+  },
+  {
+    id: 5,
+    familyName: "The Gupta Family",
+    headOfFamily: "Gautam Gupta & Abhishika Fatehpuria",
+    members: "Gautam, Abhishika, Agastya, Arihant",
+    joinDate: "2025",
+    title: "Community Member",
+    bio: "Both of us come from Jaipur and we love our pyaz ki kachoris! Phone: 8593389417",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/20250317_115410 - Abhishika Fatehpuria.jpg")
+  },
+  {
+    id: 6,
+    familyName: "The Sharma Family",
+    headOfFamily: "Shivani Sharma",
+    members: "Shivani Sharma, Manu Sharma, Dhruv Sharma, Anika Sharma",
+    joinDate: "2025",
+    title: "Community Member",
+    bio: "Shivani and Manu are IT professionals. Son Dhruv and Daughter Anika are college students. All four of us love to travel, socialize and participate in outdoor activities. Phone: 7209798539",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/dhruv6 - Manu Sharma.JPG")
+  }
+];
+
 export default function Members() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Sample family data
-  const families = [
-    {
-      id: 1,
-      familyName: "The Sodani Family",
-      headOfFamily: "Shivani Sodani",
-      members: "Family members",
-      joinDate: "2025",
-      title: "President",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 2,
-      familyName: "The Sharma Family",
-      headOfFamily: "Uma Sharma",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Member Gathering Committee",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 3,
-      familyName: "The Bisani Family",
-      headOfFamily: "Meghana Bisani",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Advisor",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 4,
-      familyName: "The Agarwal Family",
-      headOfFamily: "Purva Agarwal",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Community Member",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 5,
-      familyName: "The Javeria Family",
-      headOfFamily: "Ruchi Javeria",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Food Committee",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 6,
-      familyName: "The Gupta Family",
-      headOfFamily: "Abhishika Gupta",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Treasurer",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 7,
-      familyName: "The Gupta Family (Neha)",
-      headOfFamily: "Neha Gupta",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Community Member",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 8,
-      familyName: "The Kabra Family",
-      headOfFamily: "Neha Kabra",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Community Member",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 9,
-      familyName: "The Kasat Family",
-      headOfFamily: "Rashmi Kasat",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Community Member",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 10,
-      familyName: "The Agrawal Family",
-      headOfFamily: "Manali Agrawal",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Member Gathering Committee",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 11,
-      familyName: "The Purohit Family",
-      headOfFamily: "Priyanka Purohit",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Food & Decoration Committee",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 12,
-      familyName: "The Maheshwari Family",
-      headOfFamily: "Kartika Maheshwari",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Community Member",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 13,
-      familyName: "The Soni Family",
-      headOfFamily: "Supriya Soni",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Community Member",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 14,
-      familyName: "The Somani Family",
-      headOfFamily: "Anupama Rathi Somani",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Advisor",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 15,
-      familyName: "The Agarwal Family (Varsha)",
-      headOfFamily: "Varsha Agarwal",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Co-President",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 16,
-      familyName: "The Jain Family",
-      headOfFamily: "Priya Jain/Maheshwari",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Decoration & Setup Committee",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 17,
-      familyName: "The Tambi Family",
-      headOfFamily: "Nimisha Ameria/Tambi",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Community Member",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 18,
-      familyName: "The Gaur Family",
-      headOfFamily: "Akansha Gaur",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Community Member",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 19,
-      familyName: "The Kala Family",
-      headOfFamily: "Juhi Kala",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Community Member",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 20,
-      familyName: "The Choudhary Family",
-      headOfFamily: "Nirmal Choudhary",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Community Member",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 21,
-      familyName: "The Sahu Family",
-      headOfFamily: "Arti Sahu",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Community Member",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 22,
-      familyName: "The Gupta Family (Megha)",
-      headOfFamily: "Megha Gupta",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Entertainment Committee",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 23,
-      familyName: "The Mittal Family",
-      headOfFamily: "Tanushri Mittal",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Community Member",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 24,
-      familyName: "The Awasthi Family",
-      headOfFamily: "Bhumika Awasthi",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Community Member",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 25,
-      familyName: "The Tiwari Family",
-      headOfFamily: "Priya Tiwari",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Community Member",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    },
-    {
-      id: 26,
-      familyName: "The Mahajan Family",
-      headOfFamily: "Archana Mahajan",
-      members: "Family members",
-      joinDate: "2025",
-      title: "Community Member",
-      bio: "Fill out Google Form to give your information!",
-      profileImage: "/Mar2.png"
-    }
-  ];
+  const filteredFamilies = families.filter((family) => {
+    const query = searchTerm.trim().toLowerCase();
+    if (!query) return true;
 
-  const filteredFamilies = families.filter(family => {
-    const matchesSearch = family.familyName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         family.headOfFamily.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         family.bio.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    return matchesSearch;
+    return (
+      family.familyName.toLowerCase().includes(query) ||
+      family.headOfFamily.toLowerCase().includes(query) ||
+      family.members.toLowerCase().includes(query) ||
+      family.bio.toLowerCase().includes(query)
+    );
   });
 
   return (
@@ -288,11 +102,11 @@ export default function Members() {
       
       <main className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 relative overflow-hidden">
         {/* Indian Pattern Background */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-20 text-6xl text-orange-300 transform rotate-12">🕉️</div>
-          <div className="absolute top-60 right-1/4 text-5xl text-red-300 transform -rotate-12">🪔</div>
-          <div className="absolute bottom-1/3 left-1/4 text-4xl text-yellow-300 transform rotate-45">🌺</div>
-          <div className="absolute bottom-20 right-20 text-5xl text-pink-300 transform -rotate-45">🤝</div>
+        <div className="absolute inset-0 opacity-5" aria-hidden="true">
+          <div className="absolute top-20 left-20 text-6xl text-orange-300 transform rotate-12">*</div>
+          <div className="absolute top-60 right-1/4 text-5xl text-red-300 transform -rotate-12">*</div>
+          <div className="absolute bottom-1/3 left-1/4 text-4xl text-yellow-300 transform rotate-45">*</div>
+          <div className="absolute bottom-20 right-20 text-5xl text-pink-300 transform -rotate-45">*</div>
         </div>
 
         {/* Navigation */}
@@ -340,7 +154,7 @@ export default function Members() {
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-6">
               <div className="h-1 w-20 bg-gradient-to-r from-transparent to-orange-400"></div>
-              <span className="mx-4 text-4xl">🤝</span>
+              <span className="mx-4 text-4xl" aria-hidden="true">*</span>
               <div className="h-1 w-20 bg-gradient-to-l from-transparent to-orange-400"></div>
             </div>
             <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">
@@ -376,7 +190,9 @@ export default function Members() {
                     src={family.profileImage}
                     alt={family.familyName}
                     fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    style={family.familyName === "The Javeria Family" ? { objectPosition: "50% 35%" } : undefined}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
@@ -385,31 +201,16 @@ export default function Members() {
                     <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
                       {family.familyName}
                     </h3>
-                    <p className="text-orange-600 font-semibold">{family.headOfFamily}</p>
-                    {family.title && (
-                      <div className="mt-2">
-                        <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                          family.title === 'President' ? 'bg-purple-100 text-purple-800' :
-                          family.title === 'Co-President' ? 'bg-blue-100 text-blue-800' :
-                          family.title === 'Advisor' ? 'bg-green-100 text-green-800' :
-                          family.title === 'Treasurer' ? 'bg-yellow-100 text-yellow-800' :
-                          family.title.includes('Committee') ? 'bg-orange-100 text-orange-800' :
-                          'bg-gray-100 text-gray-800'
-                        }`}>
-                          {family.title}
-                        </span>
-                      </div>
-                    )}
                   </div>
 
                   <div className="space-y-2 mb-4">
                     <div className="flex items-center text-sm text-gray-600">
-                      <span className="mr-2">👨‍👩‍👧‍👦</span>
-                      <span>{family.members}</span>
+                      <span className="mr-2 font-semibold text-orange-600">Members:</span>
+                      <span className="text-gray-700">{family.members}</span>
                     </div>
                     <div className="flex items-center text-sm text-gray-600">
-                      <span className="mr-2">📅</span>
-                      <span>Joined {family.joinDate}</span>
+                      <span className="mr-2 font-semibold text-orange-600">Joined:</span>
+                      <span className="text-gray-700">{family.joinDate}</span>
                     </div>
                   </div>
 
@@ -433,8 +234,12 @@ export default function Members() {
           {/* No Results */}
           {filteredFamilies.length === 0 && (
             <div className="text-center py-12">
-              <div className="text-6xl mb-4">🔍</div>
-              <p className="text-gray-500 text-lg">No families found matching your search criteria.</p>
+              <div className="text-6xl mb-4" aria-hidden="true">*</div>
+              <p className="text-gray-500 text-lg">
+                {searchTerm.trim()
+                  ? "No members match your search. Try another name or keyword."
+                  : "No members are listed yet. Check back soon!"}
+              </p>
             </div>
           )}
 
@@ -442,9 +247,9 @@ export default function Members() {
           <div className="text-center mt-16">
             <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-orange-200 overflow-hidden">
               {/* Background Pattern */}
-              <div className="absolute inset-0 opacity-5">
-                <div className="absolute top-4 right-4 text-4xl text-orange-300 transform rotate-12">🤝</div>
-                <div className="absolute bottom-4 left-4 text-3xl text-red-300 transform -rotate-12">👨‍👩‍👧‍👦</div>
+              <div className="absolute inset-0 opacity-5" aria-hidden="true">
+                <div className="absolute top-4 right-4 text-4xl text-orange-300 transform rotate-12">*</div>
+                <div className="absolute bottom-4 left-4 text-3xl text-red-300 transform -rotate-12">*</div>
               </div>
               
               <div className="relative z-10">
@@ -468,7 +273,7 @@ export default function Members() {
                   href="/signup"
                   className="inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-lg hover:from-orange-600 hover:to-red-600 transition-all duration-300 font-semibold shadow-lg transform hover:scale-105"
                 >
-                  🏠 Join as a Family
+                  Join as a Family
                 </Link>
               </div>
             </div>

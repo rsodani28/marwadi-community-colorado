@@ -22,7 +22,7 @@ const families: Family[] = [
     members: "Shivani, Saurabh, Dhruv, Rishabh Sodani",
     joinDate: "2025",
     title: "Community Member",
-    bio: "Dil se Marwari, our life is khana, gana, and a lifelong love affair with numbers. Phone: 7202179139",
+    bio: "Dil se Marwari, our life is khana, gana, and a lifelong love affair with numbers.",
     profileImage: encodeURI("/PeoplePhotos/MemberPhotos/unnamed - Shivani Sodani.jpg")
   },
   {
@@ -32,7 +32,7 @@ const families: Family[] = [
     members: "Manish Javeria",
     joinDate: "2025",
     title: "Community Member",
-    bio: "We are a Jain family from Udaipur! Phone: 7206186872",
+    bio: "We are a Jain family from Udaipur!",
     profileImage: encodeURI("/PeoplePhotos/MemberPhotos/7fe2d88c-9a41-4ccf-a9db-3afd20d52c19 - Ruchi Javeria.jpeg")
   },
   {
@@ -42,7 +42,7 @@ const families: Family[] = [
     members: "Praful Jain, Archana, Bhupin, Bhushali",
     joinDate: "2025",
     title: "Community Member",
-    bio: "Marwari originally from Jodhpur, living in Pune in India. Phone: 7204013450",
+    bio: "Marwari originally from Jodhpur, living in Pune in India.",
     profileImage: encodeURI("/PeoplePhotos/MemberPhotos/IMG_6447 - PJ Jain.jpeg")
   },
   {
@@ -52,7 +52,7 @@ const families: Family[] = [
     members: "Sachin Gupta, Neha Gupta, Ananya Gupta, Anay Gupta",
     joinDate: "2025",
     title: "Community Member",
-    bio: "Sachin born and brought up in Jaipur. Food, festival and fun. Daal bati, gatte, ghewar, you name it, our family enjoys these delicacies. Phone: 650-963-6455",
+    bio: "Sachin born and brought up in Jaipur. Food, festival and fun. Daal bati, gatte, ghewar, you name it, our family enjoys these delicacies.",
     profileImage: encodeURI("/PeoplePhotos/MemberPhotos/20250412_194602(1) - Neha Gupta.jpg")
   },
   {
@@ -62,7 +62,7 @@ const families: Family[] = [
     members: "Gautam, Abhishika, Agastya, Arihant",
     joinDate: "2025",
     title: "Community Member",
-    bio: "Both of us come from Jaipur and we love our pyaz ki kachoris! Phone: 8593389417",
+    bio: "Both of us come from Jaipur and we love our pyaz ki kachoris!",
     profileImage: encodeURI("/PeoplePhotos/MemberPhotos/20250317_115410 - Abhishika Fatehpuria.jpg")
   },
   {
@@ -72,7 +72,7 @@ const families: Family[] = [
     members: "Shivani Sharma, Manu Sharma, Dhruv Sharma, Anika Sharma",
     joinDate: "2025",
     title: "Community Member",
-    bio: "Shivani and Manu are IT professionals. Son Dhruv and Daughter Anika are college students. All four of us love to travel, socialize and participate in outdoor activities. Phone: 7209798539",
+    bio: "Shivani and Manu are IT professionals. Son Dhruv and Daughter Anika are college students. All four of us love to travel, socialize and participate in outdoor activities.",
     profileImage: encodeURI("/PeoplePhotos/MemberPhotos/dhruv6 - Manu Sharma.JPG")
   }
 ];
@@ -221,11 +221,6 @@ export default function Members() {
                       {family.bio}
                     </p>
                   </div>
-
-                  {/* Connect Button */}
-                  <button className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-3 px-4 rounded-lg hover:from-orange-600 hover:to-red-600 transition-all duration-300 font-semibold shadow-lg">
-                    Connect with Family
-                  </button>
                 </div>
               </div>
             ))}

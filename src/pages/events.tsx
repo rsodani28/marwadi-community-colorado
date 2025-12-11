@@ -15,15 +15,18 @@ interface Event {
   photosLink: string;
   status: string;
   image: string;
+  objectPosition?: string;
 }
 
 export default function Events() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   // Note: upcomingEvents is kept for future use when new events are planned
-  const upcomingEvents: Event[] = [
+  const upcomingEvents: Event[] = [];
+
+  const pastEvents = [
     {
-      id: 1,
+      id: 7,
       title: "Marwari Holiday Party",
       date: "December 7th, 2025",
       time: "Evening Event",
@@ -31,13 +34,11 @@ export default function Events() {
       category: "social",
       description: "An intimate evening under warm lights with family-style dishes, festive music, and a cozy holiday party to celebrate our community spirit.",
       families: "40 families",
-      photosLink: "#",
-      status: "upcoming",
-      image: "/MarwarResize.jpg"
-    }
-  ];
-
-  const pastEvents = [
+      photosLink: "https://photos.google.com/share/AF1QipMr6e8oyj6uN9qem-rrE1jPeSx7K9L3tnY2tFNpyETUFt4s448VcsAsEGcshFDrpQ?key=ZERoeDYxMFBpaURqTEE2RkFqSVNyc2lPREFCTHp3",
+      status: "completed",
+      image: "/IMG_2275.JPG",
+      objectPosition: "center 30%"
+    },
     {
       id: 5,
       title: "Marwari Gala",
@@ -188,6 +189,7 @@ export default function Events() {
                           src={event.image || "/Mar2.png"} 
                           alt={event.title}
                           fill
+                          style={{ objectPosition: event.objectPosition || "center" }}
                           className="object-cover group-hover:scale-110 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent"></div>
@@ -267,6 +269,7 @@ export default function Events() {
                       src={event.image || "/Mar2.png"} 
                       alt={event.title}
                       fill
+                      style={{ objectPosition: event.objectPosition || "center" }}
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -346,9 +349,14 @@ export default function Events() {
                   Have an idea for a community event? We&apos;d love to hear from you!<br />
                   <span className="text-orange-600">Share your cultural ideas and traditions with our community.</span>
                 </p>
-                <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-lg hover:from-orange-600 hover:to-red-600 transition-all duration-300 font-semibold shadow-lg transform hover:scale-105">
+                <a
+                  href="https://chat.whatsapp.com/Fc7QTC0j61U2e7zgSmgPzz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-lg hover:from-orange-600 hover:to-red-600 transition-all duration-300 font-semibold shadow-lg transform hover:scale-105 inline-block"
+                >
                   🌟 Propose an Event
-                </button>
+                </a>
               </div>
             </div>
           </div>

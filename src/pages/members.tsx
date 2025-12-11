@@ -12,6 +12,7 @@ type Family = {
   title: string;
   bio: string;
   profileImage: string;
+  imagePosition?: string;
 };
 
 const families: Family[] = [
@@ -23,7 +24,8 @@ const families: Family[] = [
     joinDate: "2025",
     title: "Community Member",
     bio: "Dil se Marwari, our life is khana, gana, and a lifelong love affair with numbers.",
-    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/unnamed - Shivani Sodani.jpg")
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/unnamed - Shivani Sodani.jpg"),
+    imagePosition: "50% 40%"
   },
   {
     id: 2,
@@ -33,7 +35,8 @@ const families: Family[] = [
     joinDate: "2025",
     title: "Community Member",
     bio: "We are a Jain family from Udaipur!",
-    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/7fe2d88c-9a41-4ccf-a9db-3afd20d52c19 - Ruchi Javeria.jpeg")
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/7fe2d88c-9a41-4ccf-a9db-3afd20d52c19 - Ruchi Javeria.jpeg"),
+    imagePosition: "50% 35%"
   },
   {
     id: 3,
@@ -73,7 +76,41 @@ const families: Family[] = [
     joinDate: "2025",
     title: "Community Member",
     bio: "Shivani and Manu are IT professionals. Son Dhruv and Daughter Anika are college students. All four of us love to travel, socialize and participate in outdoor activities.",
-    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/dhruv6 - Manu Sharma.JPG")
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/dhruv6 - Manu Sharma.JPG"),
+    imagePosition: "50% 25%"
+  },
+  {
+    id: 7,
+    familyName: "The Jain Family",
+    headOfFamily: "Priya & Sumit Jain",
+    members: "Priya Jain, Sumit Jain, Maanya Jain (19), Arin Jain (14)",
+    joinDate: "2025",
+    title: "Community Member",
+    bio: "Traditions, culture and language. Born and brought up in a traditional Marwari family, keen on following traditions, celebrating festivals and speaking the native language back home.",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/SOU_8035 - Priya Sumit.jpeg"),
+    imagePosition: "50% 15%"
+  },
+  {
+    id: 8,
+    familyName: "The Purohit Family",
+    headOfFamily: "Surendra & Kanta Purohit",
+    members: "Surendra, Kanta, Dev, Priyanka, Abhay, Ayush Purohit",
+    joinDate: "2025",
+    title: "Community Member",
+    bio: "We are a Marwari family from Jodhpur. Our values, hospitality, and strong family bonds guide everything we do.",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/IMG_1528 - Poonam Purohit.jpeg"),
+    imagePosition: "50% 20%"
+  },
+  {
+    id: 9,
+    familyName: "The Somani Family",
+    headOfFamily: "Anupama & Manish Somani",
+    members: "Anupama Somani, Manish Somani, Eesha, Aarav",
+    joinDate: "2025",
+    title: "Community Member",
+    bio: "Roots from Jodhpur/Phalodi/Chittod - love to celebrate our marwadi food, culture and traditions.",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/IMG_9006 - Anupama Rathi.jpg"),
+    imagePosition: "50% 25%"
   }
 ];
 
@@ -192,7 +229,7 @@ export default function Members() {
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    style={family.familyName === "The Javeria Family" ? { objectPosition: "50% 35%" } : undefined}
+                    style={family.imagePosition ? { objectPosition: family.imagePosition } : undefined}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>

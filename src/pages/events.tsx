@@ -22,7 +22,99 @@ export default function Events() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   // Note: upcomingEvents is kept for future use when new events are planned
-  const upcomingEvents: Event[] = [];
+  const upcomingEvents: Event[] = [
+    {
+      id: 1,
+      title: "Ghoomar Workshop",
+      date: "February",
+      time: "To Be Shared Later",
+      location: "To Be Shared Later",
+      category: "education",
+      description: "Immerse yourself in the swirling grace of Rajasthan. A workshop dedicated to mastering the traditional folk dance that defines our heritage.",
+      families: "To Be Shared Later",
+      photosLink: "To Be Shared Later",
+      status: "upcoming",
+      image: "/Mar2.png"
+    },
+    {
+      id: 2,
+      title: "Gangaur Celebration",
+      date: "March 21",
+      time: "To Be Shared Later",
+      location: "Hindu Temple",
+      category: "festival",
+      description: "Honor the divine bond of Gauri and Shiva. Join us at the Hindu Temple for a day of vibrant rituals, traditional songs, and community spirit.",
+      families: "To Be Shared Later",
+      photosLink: "To Be Shared Later",
+      status: "upcoming",
+      image: "/Mar2.png"
+    },
+    {
+      id: 3,
+      title: "Marwari Chef Show Off",
+      date: "May",
+      time: "To Be Shared Later",
+      location: "To Be Shared Later",
+      category: "social",
+      description: "A culinary showdown for the ages! Bring your signature dish to this potluck extravaganza and showcase the authentic flavors of your kitchen.",
+      families: "To Be Shared Later",
+      photosLink: "To Be Shared Later",
+      status: "upcoming",
+      image: "/Mar2.png"
+    },
+    {
+      id: 4,
+      title: "Summer Hike & Games",
+      date: "June",
+      time: "To Be Shared Later",
+      location: "To Be Shared Later",
+      category: "social",
+      description: "Embrace the Colorado sunshine. A day of fresh air, scenic trails, and friendly outdoor competition designed for all ages.",
+      families: "To Be Shared Later",
+      photosLink: "To Be Shared Later",
+      status: "upcoming",
+      image: "/Mar2.png"
+    },
+    {
+      id: 5,
+      title: "Picnic & Teej Celebration",
+      date: "August",
+      time: "To Be Shared Later",
+      location: "Cherry Creek State Park",
+      category: "festival",
+      description: "Celebrate the monsoon spirits at Cherry Creek State Park. A festive gathering featuring traditional Teej swings, laughter, and lakeside fun.",
+      families: "To Be Shared Later",
+      photosLink: "To Be Shared Later",
+      status: "upcoming",
+      image: "/Mar2.png"
+    },
+    {
+      id: 6,
+      title: "Karaoke & Card Games",
+      date: "October",
+      time: "To Be Shared Later",
+      location: "To Be Shared Later",
+      category: "social",
+      description: "Unleash your inner star and sharpen your strategy. An evening of musical performances followed by the timeless Marwari tradition of card games.",
+      families: "To Be Shared Later",
+      photosLink: "To Be Shared Later",
+      status: "upcoming",
+      image: "/Mar2.png"
+    },
+    {
+      id: 7,
+      title: "Grand Holiday Party",
+      date: "December",
+      time: "To Be Shared Later",
+      location: "To Be Shared Later",
+      category: "social",
+      description: "Our signature year-end gala. Reflect on a year of togetherness with a night of elegance, celebration, and festive cheer.",
+      families: "To Be Shared Later",
+      photosLink: "To Be Shared Later",
+      status: "upcoming",
+      image: "/Mar2.png"
+    }
+  ];
 
   const pastEvents = [
     {

@@ -83,7 +83,7 @@ const families: Family[] = [
     id: 7,
     familyName: "The Jain Family",
     headOfFamily: "Priya & Sumit Jain",
-    members: "Priya Jain, Sumit Jain, Maanya Jain (19), Arin Jain (14)",
+    members: "Priya Jain, Sumit Jain, Maanya Jain, Arin Jain",
     joinDate: "2025",
     title: "Community Member",
     bio: "Traditions, culture and language. Born and brought up in a traditional Marwari family, keen on following traditions, celebrating festivals and speaking the native language back home.",
@@ -111,6 +111,48 @@ const families: Family[] = [
     bio: "Roots from Jodhpur/Phalodi/Chittod - love to celebrate our marwadi food, culture and traditions.",
     profileImage: encodeURI("/PeoplePhotos/MemberPhotos/IMG_9006 - Anupama Rathi.jpg"),
     imagePosition: "50% 25%"
+  },
+  {
+    id: 10,
+    familyName: "The Agarwal Family",
+    headOfFamily: "Deepak & Varsha Agarwal",
+    members: "Deepak Agarwal, Varsha Agarwal, Reyansh",
+    joinDate: "2025",
+    title: "Community Member",
+    bio: "We are a culturally rooted Marwari family originally from Rajasthan, with strong respect for traditions, rituals, and community values. We follow Marwari customs and festivals and believe in living with integrity, hospitality, and financial discipline.",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/IMG_2424 - Varsha Agarwal.jpeg")
+  },
+  {
+    id: 11,
+    familyName: "The Bisani Family",
+    headOfFamily: "Mayur & Meghana Bisani",
+    members: "Mayur Bisani, Meghana Bisani",
+    joinDate: "2025",
+    title: "Community Member",
+    bio: "Husband is a Maheshwari Marwadi.",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/IMG_7459 - Meghana Bisani.jpeg"),
+    imagePosition: "50% 30%"
+  },
+  {
+    id: 12,
+    familyName: "The Kasat Family",
+    headOfFamily: "Rahul & Rashmi Kasat",
+    members: "Rahul Kasat, Rashmi Kasat, Rhythm Kasat",
+    joinDate: "2025",
+    title: "Community Member",
+    bio: "We are a Marwari family from Pune.",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/IMG_1944 - Rashmi Kasat.jpeg")
+  },
+  {
+    id: 13,
+    familyName: "The Mittal Family",
+    headOfFamily: "Mayank Mittal & Manali Agrawal Mittal",
+    members: "Mayank Mittal, Manali Agrawal Mittal, Hridhaan, Mihaan",
+    joinDate: "2025",
+    title: "Community Member",
+    bio: "My Rajasthani Roots! We practice Marwari traditions and enjoys Marwari food!",
+    profileImage: encodeURI("/Mittal.png"),
+    imagePosition: "50% 35%"
   }
 ];
 

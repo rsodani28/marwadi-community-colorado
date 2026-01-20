@@ -161,7 +161,7 @@ export default function SignUp() {
                   <div>
                     <div className="text-3xl mb-2">💰</div>
                     <h4 className="font-semibold text-gray-900 mb-1">2. Payment Info</h4>
-                    <p className="text-sm text-gray-600">Receive payment instructions via email</p>
+                    <p className="text-sm text-gray-600">Receive payment instructions via Zelle or Venmo in Support Us page</p>
                   </div>
                   <div>
                     <div className="text-3xl mb-2">🎉</div>

@@ -153,6 +153,50 @@ const families: Family[] = [
     bio: "My Rajasthani Roots! We practice Marwari traditions and enjoys Marwari food!",
     profileImage: encodeURI("/Mittal.png"),
     imagePosition: "50% 35%"
+  },
+  {
+    id: 14,
+    familyName: "The Anisha Family",
+    headOfFamily: "Anisha & Dharmil",
+    members: "Anisha, Dharmil, Divit",
+    joinDate: "2026",
+    title: "Community Member",
+    bio: "Marwari from Calcutta, love the food and traditions.",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/60b3e779-638c-4597-a124-8068ae8f10cd - Anisha.jpeg"),
+    imagePosition: "50% 20%"
+  },
+  {
+    id: 15,
+    familyName: "The Sharma Family",
+    headOfFamily: "Uma & Utkal Sharma",
+    members: "Uma, Utkal, Eshaan, Google Sharma",
+    joinDate: "2026",
+    title: "Community Member",
+    bio: "Marwari family; parents from Sawai Madhopur, grew up eating dal bati and celebrating Gangaur.",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/9d7102ce-aa9a-400b-8843-1c3d472cb2b9 - Uma Sharma.jpeg"),
+    imagePosition: "50% 18%"
+  },
+  {
+    id: 16,
+    familyName: "The Kabra Family",
+    headOfFamily: "Neha & Sumeet Kabra",
+    members: "Neha, Sumeet Kabra, Aarav, Ayaan",
+    joinDate: "2026",
+    title: "Community Member",
+    bio: "Hospitality, skilled at bargaining and deal-making.",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/PHOTO-2026-01-30-21-50-45 - Sumeet Kabra.jpg"),
+    imagePosition: "50% 45%"
+  },
+  {
+    id: 17,
+    familyName: "The Gaur Family",
+    headOfFamily: "Mitesh & Akanksha Gaur",
+    members: "Mitesh, Akanksha, Mitaksh, Mitika",
+    joinDate: "2026",
+    title: "Community Member",
+    bio: "Marwari family in Colorado.",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/Gaur.jpg"),
+    imagePosition: "50% 25%"
   }
 ];
 

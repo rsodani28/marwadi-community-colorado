@@ -194,7 +194,7 @@ const families: Family[] = [
     members: "Mitesh, Akanksha, Mitaksh, Mitika",
     joinDate: "2026",
     title: "Community Member",
-    bio: "Marwari family in Colorado.",
+    bio: "We are from Bharatpur.",
     profileImage: encodeURI("/PeoplePhotos/MemberPhotos/Gaur.jpg"),
     imagePosition: "50% 35%"
   }

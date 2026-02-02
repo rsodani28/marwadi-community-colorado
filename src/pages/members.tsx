@@ -196,7 +196,7 @@ const families: Family[] = [
     title: "Community Member",
     bio: "Marwari family in Colorado.",
     profileImage: encodeURI("/PeoplePhotos/MemberPhotos/Gaur.jpg"),
-    imagePosition: "50% 25%"
+    imagePosition: "50% 35%"
   }
 ];
 

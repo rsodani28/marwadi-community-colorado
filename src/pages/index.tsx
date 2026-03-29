@@ -63,12 +63,6 @@ export default function Home() {
                 <Link href="/signup" className="text-gray-700 hover:text-orange-600 transition-all duration-300 font-medium hover:border-b-2 hover:border-orange-300 hover:scale-105">
                   Sign Up
                 </Link>
-                <Link href="/financials" className="text-gray-700 hover:text-orange-600 transition-all duration-300 font-medium hover:border-b-2 hover:border-orange-300 hover:scale-105">
-                  Financials
-                </Link>
-                <Link href="/support" className="text-gray-700 hover:text-orange-600 transition-all duration-300 font-medium hover:border-b-2 hover:border-orange-300 hover:scale-105">
-                  Support Us
-                </Link>
               </div>
             </div>
           </div>
@@ -341,7 +335,7 @@ export default function Home() {
                       </div>
                     </Link>
                     <Link
-                      href="/support"
+                      href="/members"
                       className="flex items-center justify-center p-4 bg-teal-100 hover:bg-teal-200 rounded-lg transition-colors group"
                     >
                       <span className="text-2xl mr-3 group-hover:scale-110 transition-transform">💝</span>

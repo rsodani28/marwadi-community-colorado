@@ -213,7 +213,7 @@ const renderTable = (
                 <Link href="/financials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium border-b-2 border-orange-500">
                   Financials
                 </Link>
-                <Link href="/support" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
+                <Link href="/members" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
                   Support Us
                 </Link>
               </div>
@@ -358,7 +358,7 @@ const renderTable = (
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
-                    href="/support"
+                    href="/members"
                     className="inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-lg hover:from-orange-600 hover:to-red-600 transition-all duration-300 font-semibold shadow-lg transform hover:scale-105"
                   >
                     Support the Community

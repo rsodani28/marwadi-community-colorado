@@ -156,7 +156,7 @@ const families: Family[] = [
   },
   {
     id: 14,
-    familyName: "The Anisha Family",
+    familyName: "The Domadia Family",
     headOfFamily: "Anisha & Dharmil",
     members: "Anisha, Dharmil, Divit",
     joinDate: "2025",
@@ -197,6 +197,39 @@ const families: Family[] = [
     bio: "We are from Bharatpur.",
     profileImage: encodeURI("/PeoplePhotos/MemberPhotos/Gaur.jpg"),
     imagePosition: "50% 35%"
+  },
+  {
+    id: 18,
+    familyName: "The Soni Family",
+    headOfFamily: "Dhiraj & Supriya Soni",
+    members: "Dhiraj, Supriya, Suraj, Neev",
+    joinDate: "2025",
+    title: "Community Member",
+    bio: "Food :)",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/soni.jpg"),
+    imagePosition: "50% 50%"
+  },
+  {
+    id: 19,
+    familyName: "The Agarwal Family",
+    headOfFamily: "Ashish & Purva Agarwal",
+    members: "Ashish, Purva, Ved, Rishi",
+    joinDate: "2025",
+    title: "Community Member",
+    bio: "",
+    profileImage: encodeURI("/PeoplePhotos/MemberPhotos/agrawal.jpg"),
+    imagePosition: "50% 30%"
+  },
+  {
+    id: 20,
+    familyName: "The Ameria Family",
+    headOfFamily: "Satyen & Nimisha Ameria",
+    members: "Satyen, Nimisha, Etash & Ayaansh",
+    joinDate: "2026",
+    title: "Community Member",
+    bio: "Satyen's parents are still in Rajasthan. My Parents are from Rajasthan. We love marwari food and traditions.",
+    profileImage: encodeURI("/PeoplePhotos/WhatsApp Image 2026-03-18 at 4.23.21 PM - Nimisha Tambi - OIT.jpeg"),
+    imagePosition: "50% 30%"
   }
 ];
 
@@ -260,12 +293,6 @@ export default function Members() {
                 </Link>
                 <Link href="/signup" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
                   Sign Up
-                </Link>
-                <Link href="/financials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
-                  Financials
-                </Link>
-                <Link href="/support" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
-                  Support Us
                 </Link>
               </div>
             </div>

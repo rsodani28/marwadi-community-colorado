@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export default function Support() {
   const [expandedQR, setExpandedQR] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const qrCodes = [
     {
@@ -46,33 +47,30 @@ export default function Support() {
         <nav className="relative z-10 border-b border-orange-200 bg-white/90 backdrop-blur-sm shadow-lg">
           <div className="container mx-auto px-4">
             <div className="flex h-20 items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <Image 
-                  src="/MarwariCClogo.jpg" 
-                  alt="Marwari Community Logo" 
-                  width={48}
-                  height={48}
-                  className="h-12 w-12 rounded-full object-cover border-2 border-orange-300"
-                />
-                <Link href="/" className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+              <div className="flex items-center space-x-3 min-w-0">
+                <Image src="/MarwariCClogo.jpg" alt="Marwari Community Logo" width={48} height={48} className="h-12 w-12 rounded-full object-cover border-2 border-orange-300 flex-shrink-0" />
+                <Link href="/" className="text-base md:text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent leading-tight">
                   Marwari Community of Colorado
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-6">
-                <Link href="/" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
-                  Home
-                </Link>
-                <Link href="/events" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
-                  Events
-                </Link>
-                <Link href="/members" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
-                  Members
-                </Link>
-                <Link href="/signup" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
-                  Sign Up
-                </Link>
+                <Link href="/" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">Home</Link>
+                <Link href="/events" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">Events</Link>
+                <Link href="/members" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">Members</Link>
+                <Link href="/signup" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">Sign Up</Link>
               </div>
+              <button className="md:hidden flex-shrink-0 p-2 rounded-lg text-gray-700 hover:bg-orange-50 transition-colors" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
+                {mobileMenuOpen ? <span className="text-xl leading-none">✕</span> : <div className="w-6 space-y-1.5"><div className="h-0.5 bg-gray-700 rounded"></div><div className="h-0.5 bg-gray-700 rounded"></div><div className="h-0.5 bg-gray-700 rounded"></div></div>}
+              </button>
             </div>
+            {mobileMenuOpen && (
+              <div className="md:hidden border-t border-orange-100 pb-3 flex flex-col">
+                <Link href="/" onClick={() => setMobileMenuOpen(false)} className="px-2 py-3 text-gray-700 hover:text-orange-600 font-medium hover:border-l-2 hover:border-orange-300 pl-3">Home</Link>
+                <Link href="/events" onClick={() => setMobileMenuOpen(false)} className="px-2 py-3 text-gray-700 hover:text-orange-600 font-medium hover:border-l-2 hover:border-orange-300 pl-3">Events</Link>
+                <Link href="/members" onClick={() => setMobileMenuOpen(false)} className="px-2 py-3 text-gray-700 hover:text-orange-600 font-medium hover:border-l-2 hover:border-orange-300 pl-3">Members</Link>
+                <Link href="/signup" onClick={() => setMobileMenuOpen(false)} className="px-2 py-3 text-gray-700 hover:text-orange-600 font-medium hover:border-l-2 hover:border-orange-300 pl-3">Sign Up</Link>
+              </div>
+            )}
           </div>
         </nav>
 
@@ -84,10 +82,10 @@ export default function Support() {
               <span className="mx-4 text-4xl">💝</span>
               <div className="h-1 w-20 bg-gradient-to-l from-transparent to-orange-400"></div>
             </div>
-            <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">
+            <h1 className="text-3xl sm:text-5xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">
               Support Our Community
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Help us grow and strengthen the Marwari Community of Colorado through your generous 
               donations. Your support helps preserve our heritage, organize community events, and build a brighter future for our families.
             </p>

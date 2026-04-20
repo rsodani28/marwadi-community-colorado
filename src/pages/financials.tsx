@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 interface LineItem {
   label: string;
@@ -19,6 +20,7 @@ const formatCurrency = (value: number) =>
   })}`;
 
 export default function Financials() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const fundsInHand = 3201.06;
 
   const founderContributions: Contribution[] = [
@@ -144,20 +146,20 @@ const renderTable = (
         )}
       </div>
       <div className="overflow-hidden rounded-xl border border-orange-100">
-        <div className="grid grid-cols-3 bg-gradient-to-r from-orange-50 to-red-50 px-4 py-3 font-semibold text-sm text-orange-900">
+        <div className="grid grid-cols-3 bg-gradient-to-r from-orange-50 to-red-50 px-2 sm:px-4 py-2 sm:py-3 font-semibold text-xs sm:text-sm text-orange-900">
           <span className="col-span-2">Line Item</span>
           <span className="text-right">Amount</span>
         </div>
         {(rows as (LineItem | Contribution)[]).map((row, idx) => (
           <div
             key={`${title}-${idx}`}
-            className="grid grid-cols-3 px-4 py-3 text-sm text-gray-800 bg-white odd:bg-orange-50/40 border-b border-orange-100"
+            className="grid grid-cols-3 px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-800 bg-white odd:bg-orange-50/40 border-b border-orange-100"
           >
-            <span className="col-span-2">{getLabel(row)}</span>
-            <span className="text-right font-semibold text-gray-900">{formatCurrency(row.amount)}</span>
+            <span className="col-span-2 pr-2 leading-snug">{getLabel(row)}</span>
+            <span className="text-right font-semibold text-gray-900 whitespace-nowrap">{formatCurrency(row.amount)}</span>
           </div>
         ))}
-        <div className="grid grid-cols-3 px-4 py-3 text-sm font-bold text-gray-900 bg-orange-100/80">
+        <div className="grid grid-cols-3 px-2 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-bold text-gray-900 bg-orange-100/80">
           <span className="col-span-2">Total</span>
           <span className="text-right">{formatCurrency(total)}</span>
         </div>
@@ -185,39 +187,34 @@ const renderTable = (
         <nav className="relative z-10 border-b border-orange-200 bg-white/90 backdrop-blur-sm shadow-lg">
           <div className="container mx-auto px-4">
             <div className="flex h-20 items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <Image 
-                  src="/MarwariCClogo.jpg" 
-                  alt="Marwari Community Logo" 
-                  width={48}
-                  height={48}
-                  className="h-12 w-12 rounded-full object-cover border-2 border-orange-300"
-                />
-                <Link href="/" className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+              <div className="flex items-center space-x-3 min-w-0">
+                <Image src="/MarwariCClogo.jpg" alt="Marwari Community Logo" width={48} height={48} className="h-12 w-12 rounded-full object-cover border-2 border-orange-300 flex-shrink-0" />
+                <Link href="/" className="text-base md:text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent leading-tight">
                   Marwari Community of Colorado
                 </Link>
               </div>
               <div className="hidden md:flex items-center space-x-6">
-                <Link href="/" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
-                  Home
-                </Link>
-                <Link href="/events" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
-                  Events
-                </Link>
-                <Link href="/members" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
-                  Members
-                </Link>
-                <Link href="/signup" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
-                  Sign Up
-                </Link>
-                <Link href="/financials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium border-b-2 border-orange-500">
-                  Financials
-                </Link>
-                <Link href="/members" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">
-                  Support Us
-                </Link>
+                <Link href="/" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">Home</Link>
+                <Link href="/events" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">Events</Link>
+                <Link href="/members" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">Members</Link>
+                <Link href="/signup" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">Sign Up</Link>
+                <Link href="/financials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium border-b-2 border-orange-500">Financials</Link>
+                <Link href="/support" className="text-gray-700 hover:text-orange-600 transition-colors font-medium hover:border-b-2 hover:border-orange-300">Support Us</Link>
               </div>
+              <button className="md:hidden flex-shrink-0 p-2 rounded-lg text-gray-700 hover:bg-orange-50 transition-colors" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
+                {mobileMenuOpen ? <span className="text-xl leading-none">✕</span> : <div className="w-6 space-y-1.5"><div className="h-0.5 bg-gray-700 rounded"></div><div className="h-0.5 bg-gray-700 rounded"></div><div className="h-0.5 bg-gray-700 rounded"></div></div>}
+              </button>
             </div>
+            {mobileMenuOpen && (
+              <div className="md:hidden border-t border-orange-100 pb-3 flex flex-col">
+                <Link href="/" onClick={() => setMobileMenuOpen(false)} className="px-2 py-3 text-gray-700 hover:text-orange-600 font-medium hover:border-l-2 hover:border-orange-300 pl-3">Home</Link>
+                <Link href="/events" onClick={() => setMobileMenuOpen(false)} className="px-2 py-3 text-gray-700 hover:text-orange-600 font-medium hover:border-l-2 hover:border-orange-300 pl-3">Events</Link>
+                <Link href="/members" onClick={() => setMobileMenuOpen(false)} className="px-2 py-3 text-gray-700 hover:text-orange-600 font-medium hover:border-l-2 hover:border-orange-300 pl-3">Members</Link>
+                <Link href="/signup" onClick={() => setMobileMenuOpen(false)} className="px-2 py-3 text-gray-700 hover:text-orange-600 font-medium hover:border-l-2 hover:border-orange-300 pl-3">Sign Up</Link>
+                <Link href="/financials" onClick={() => setMobileMenuOpen(false)} className="px-2 py-3 text-gray-700 hover:text-orange-600 font-medium border-l-2 border-orange-500 pl-3">Financials</Link>
+                <Link href="/support" onClick={() => setMobileMenuOpen(false)} className="px-2 py-3 text-gray-700 hover:text-orange-600 font-medium hover:border-l-2 hover:border-orange-300 pl-3">Support Us</Link>
+              </div>
+            )}
           </div>
         </nav>
 
@@ -228,10 +225,10 @@ const renderTable = (
               <span className="mx-4 text-4xl text-green-600">$</span>
               <div className="h-1 w-20 bg-gradient-to-l from-transparent to-orange-400"></div>
             </div>
-            <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">
+            <h1 className="text-3xl sm:text-5xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">
               Financial Transparency
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
               A clear view of contributions, event expenses, and funds in hand for the Marwari Community of Colorado.
             </p>
           </div>

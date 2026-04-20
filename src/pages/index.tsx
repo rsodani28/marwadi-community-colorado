@@ -1,8 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
@@ -36,40 +38,41 @@ export default function Home() {
         <nav className="relative z-10 border-b border-orange-200 bg-white/95 backdrop-blur-md shadow-lg transition-all duration-300">
           <div className="container mx-auto px-4">
             <div className="flex h-20 items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <Image 
-                  src="/MarwariCClogo.jpg" 
-                  alt="Marwari Community Logo" 
+              <div className="flex items-center space-x-3 min-w-0">
+                <Image
+                  src="/MarwariCClogo.jpg"
+                  alt="Marwari Community Logo"
                   width={56}
                   height={56}
-                  className="h-14 w-14 rounded-full object-cover border-3 border-orange-300 shadow-lg hover:scale-110 transition-transform duration-300"
+                  className="h-14 w-14 rounded-full object-cover border-3 border-orange-300 shadow-lg hover:scale-110 transition-transform duration-300 flex-shrink-0"
                 />
-                <div>
-                  <h1 className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                    Marwari Community of Colorado
-                  </h1>
-                </div>
+                <h1 className="text-base md:text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent leading-tight">
+                  Marwari Community of Colorado
+                </h1>
               </div>
               <div className="hidden md:flex items-center space-x-6">
-                <Link href="/" className="text-gray-700 hover:text-orange-600 transition-all duration-300 font-medium border-b-2 border-orange-500 hover:scale-105">
-                  Home
-                </Link>
-                <Link href="/events" className="text-gray-700 hover:text-orange-600 transition-all duration-300 font-medium hover:border-b-2 hover:border-orange-300 hover:scale-105">
-                  Events
-                </Link>
-                <Link href="/members" className="text-gray-700 hover:text-orange-600 transition-all duration-300 font-medium hover:border-b-2 hover:border-orange-300 hover:scale-105">
-                  Members
-                </Link>
-                <Link href="/signup" className="text-gray-700 hover:text-orange-600 transition-all duration-300 font-medium hover:border-b-2 hover:border-orange-300 hover:scale-105">
-                  Sign Up
-                </Link>
+                <Link href="/" className="text-gray-700 hover:text-orange-600 transition-all duration-300 font-medium border-b-2 border-orange-500 hover:scale-105">Home</Link>
+                <Link href="/events" className="text-gray-700 hover:text-orange-600 transition-all duration-300 font-medium hover:border-b-2 hover:border-orange-300 hover:scale-105">Events</Link>
+                <Link href="/members" className="text-gray-700 hover:text-orange-600 transition-all duration-300 font-medium hover:border-b-2 hover:border-orange-300 hover:scale-105">Members</Link>
+                <Link href="/signup" className="text-gray-700 hover:text-orange-600 transition-all duration-300 font-medium hover:border-b-2 hover:border-orange-300 hover:scale-105">Sign Up</Link>
               </div>
+              <button className="md:hidden flex-shrink-0 p-2 rounded-lg text-gray-700 hover:bg-orange-50 transition-colors" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
+                {mobileMenuOpen ? <span className="text-xl leading-none">✕</span> : <div className="w-6 space-y-1.5"><div className="h-0.5 bg-gray-700 rounded"></div><div className="h-0.5 bg-gray-700 rounded"></div><div className="h-0.5 bg-gray-700 rounded"></div></div>}
+              </button>
             </div>
+            {mobileMenuOpen && (
+              <div className="md:hidden border-t border-orange-100 pb-3 flex flex-col">
+                <Link href="/" onClick={() => setMobileMenuOpen(false)} className="px-2 py-3 text-gray-700 hover:text-orange-600 font-medium border-l-2 border-orange-500 pl-3">Home</Link>
+                <Link href="/events" onClick={() => setMobileMenuOpen(false)} className="px-2 py-3 text-gray-700 hover:text-orange-600 font-medium hover:border-l-2 hover:border-orange-300 pl-3">Events</Link>
+                <Link href="/members" onClick={() => setMobileMenuOpen(false)} className="px-2 py-3 text-gray-700 hover:text-orange-600 font-medium hover:border-l-2 hover:border-orange-300 pl-3">Members</Link>
+                <Link href="/signup" onClick={() => setMobileMenuOpen(false)} className="px-2 py-3 text-gray-700 hover:text-orange-600 font-medium hover:border-l-2 hover:border-orange-300 pl-3">Sign Up</Link>
+              </div>
+            )}
           </div>
         </nav>
 
         {/* Hero Section */}
-        <section className="relative z-10 container mx-auto px-4 py-20">
+        <section className="relative z-10 container mx-auto px-4 py-10 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Hero Content */}
             <div className="text-center lg:text-left animate-fade-in-up">
@@ -156,7 +159,7 @@ export default function Home() {
         </section>
 
         {/* Cultural Events Section with Large Image */}
-        <section className="relative z-10 py-20 overflow-hidden">
+        <section className="relative z-10 py-10 md:py-20 overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Content */}
@@ -224,7 +227,7 @@ export default function Home() {
         </section>
 
         {/* Community Network Section with Large Image */}
-        <section className="relative z-10 bg-white py-20 overflow-hidden">
+        <section className="relative z-10 bg-white py-10 md:py-20 overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Large Community Image - Left Side */}
@@ -302,7 +305,7 @@ export default function Home() {
         </section>
 
         {/* Community Unity Section with Large Image */}
-        <section className="relative z-10 py-20 overflow-hidden">
+        <section className="relative z-10 py-10 md:py-20 overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Content */}
@@ -374,7 +377,7 @@ export default function Home() {
         </section>
 
         {/* Community Stats */}
-        <section className="relative bg-white py-20 overflow-hidden">
+        <section className="relative bg-white py-10 md:py-20 overflow-hidden">
           {/* Traditional Pattern Background */}
           <div className="absolute inset-0">
             <div className="absolute top-0 left-0 w-full h-full opacity-5">

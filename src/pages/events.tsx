@@ -16,11 +16,14 @@ interface Event {
   status: string;
   image: string;
   objectPosition?: string;
+  posterImage?: string;
+  registrationLink?: string;
 }
 
 export default function Events() {
   const [selectedYear, setSelectedYear] = useState("2026");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [posterEvent, setPosterEvent] = useState<Event | null>(null);
 
   const events2025Past: Event[] = [
     {
@@ -74,7 +77,7 @@ export default function Events() {
       location: "Hindu Temple",
       category: "education",
       description: "Immerse yourself in the swirling grace of Rajasthan. A workshop dedicated to mastering the traditional folk dance that defines our heritage.",
-      families: "To Be Shared Later",
+      families: "",
       photosLink: "https://photos.google.com/share/AF1QipOnNRp4A7qkKAB9jefXGmlPAR8Nz3umvi5dmaKHTxEdQNa9dYVUYbftGuoN7gte9A?pli=1&key=SUVjZVpuODlUNXJYc0V3MGpkRWZiWHlsNUQ2eXV3",
       status: "completed",
       image: "/Ghoomar.jpg"
@@ -87,7 +90,7 @@ export default function Events() {
       location: "Hindu Temple",
       category: "festival",
       description: "Honor the divine bond of Gauri and Shiva. Join us at the Hindu Temple for a day of vibrant rituals, traditional songs, and community spirit.",
-      families: "To Be Shared Later",
+      families: "",
       photosLink: "https://photos.google.com/share/AF1QipOPnPYISgBiB8Img-KQ0dAYkVwrmGHdAg3ZUKyaGtpesCOY2IN0GPXcQJbWT6v3xw?key=d3R5ZTVZaXFXTmI5cW1xOWJNdF91Y2xBSGs1WDln",
       status: "completed",
       image: "/Gangaur.jpg"
@@ -98,39 +101,28 @@ export default function Events() {
     {
       id: 3,
       title: "Marwari Chef Show Off",
-      date: "May",
-      time: "To Be Shared Later",
-      location: "To Be Shared Later",
+      date: "June 7, 2026",
+      time: "4:00 PM",
+      location: "",
       category: "social",
-      description: "A culinary showdown for the ages! Bring your signature dish to this potluck extravaganza and showcase the authentic flavors of your kitchen.",
-      families: "To Be Shared Later",
-      photosLink: "To Be Shared Later",
+      description: "A Celebration of Taste, Tradition & Togetherness! Calling all home chefs & food lovers — bring your signature Marwari dish and showcase your culinary magic. Traditional flavors & creative twists, sweet, savory, spicy — all welcome. Community tasting with fun judging: every guest gets 10 beans to vote, most beans wins! 🏆 Prizes: 1st – $150, 2nd – $100, 3rd – $50 Amazon Gift Cards. Members Only Event.",
+      families: "",
+      photosLink: "",
       status: "upcoming",
-      image: "/Mar2.png"
-    },
-    {
-      id: 4,
-      title: "Summer Hike & Games",
-      date: "June",
-      time: "To Be Shared Later",
-      location: "To Be Shared Later",
-      category: "social",
-      description: "Embrace the Colorado sunshine. A day of fresh air, scenic trails, and friendly outdoor competition designed for all ages.",
-      families: "To Be Shared Later",
-      photosLink: "To Be Shared Later",
-      status: "upcoming",
-      image: "/Mar2.png"
+      image: "/MarwariChefShowoff.jpg",
+      posterImage: "/MarwariChefShowoff.jpg",
+      registrationLink: "https://forms.gle/pV3WddhPS1ojgCU1A"
     },
     {
       id: 5,
       title: "Picnic & Teej Celebration",
-      date: "August",
-      time: "To Be Shared Later",
+      date: "August 30, 2026",
+      time: "4:00 PM",
       location: "Cherry Creek State Park",
       category: "festival",
       description: "Celebrate the monsoon spirits at Cherry Creek State Park. A festive gathering featuring traditional Teej swings, laughter, and lakeside fun.",
-      families: "To Be Shared Later",
-      photosLink: "To Be Shared Later",
+      families: "",
+      photosLink: "",
       status: "upcoming",
       image: "/Mar2.png"
     },
@@ -316,7 +308,10 @@ export default function Events() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {upcomingEvents.map((event) => (
                   <div key={event.id} className="group bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-orange-200">
-                    <div className="relative h-48 bg-gradient-to-br from-orange-200 to-red-200 flex items-center justify-center overflow-hidden">
+                    <div
+                      className={`relative h-48 bg-gradient-to-br from-orange-200 to-red-200 flex items-center justify-center overflow-hidden ${event.posterImage ? "cursor-pointer" : ""}`}
+                      onClick={() => event.posterImage && setPosterEvent(event)}
+                    >
                       <Image
                         src={event.image || "/Mar2.png"}
                         alt={event.title}
@@ -330,6 +325,13 @@ export default function Events() {
                           UPCOMING
                         </span>
                       </div>
+                      {event.posterImage && (
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
+                          <span className="bg-white/90 text-gray-900 font-semibold text-sm px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+                            🖼️ View Full Poster
+                          </span>
+                        </div>
+                      )}
                     </div>
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-3">
@@ -356,15 +358,36 @@ export default function Events() {
                         <p className="text-sm text-gray-600 flex items-center">
                           <span className="mr-2">🕒</span> {event.time}
                         </p>
-                        <p className="text-sm text-gray-600 flex items-center">
-                          <span className="mr-2">📍</span> {event.location}
-                        </p>
+                        {event.location && (
+                          <p className="text-sm text-gray-600 flex items-center">
+                            <span className="mr-2">📍</span> {event.location}
+                          </p>
+                        )}
                       </div>
                       <p className="text-gray-700 mb-6 leading-relaxed">{event.description}</p>
                       <div className="flex flex-col md:flex-row gap-3">
-                        <span className="flex-1 inline-block text-center bg-gradient-to-r from-orange-500 to-red-500 text-white py-3 px-4 rounded-lg shadow-lg font-semibold">
-                          📅 Save the Date
-                        </span>
+                        {event.registrationLink ? (
+                          <a
+                            href={event.registrationLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 inline-block text-center bg-gradient-to-r from-orange-500 to-red-500 text-white py-3 px-4 rounded-lg shadow-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all"
+                          >
+                            📝 Register
+                          </a>
+                        ) : (
+                          <span className="flex-1 inline-block text-center bg-gradient-to-r from-orange-500 to-red-500 text-white py-3 px-4 rounded-lg shadow-lg font-semibold">
+                            📅 Save the Date
+                          </span>
+                        )}
+                        {event.posterImage && (
+                          <button
+                            onClick={() => setPosterEvent(event)}
+                            className="flex-1 inline-block text-center border-2 border-orange-500 text-orange-600 py-3 px-4 rounded-lg font-semibold hover:bg-orange-50 transition-colors"
+                          >
+                            🖼️ View Poster
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -419,7 +442,7 @@ export default function Events() {
                          event.category === 'education' ? '📚 Education' :
                          '👥 Social'}
                       </span>
-                      <span className="text-green-600 font-bold text-sm">✓ {event.families}</span>
+                      {event.families && <span className="text-green-600 font-bold text-sm">✓ {event.families}</span>}
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">
                       {event.title}
@@ -487,6 +510,34 @@ export default function Events() {
             </div>
           </div>
         </div>
+
+        {/* Poster Lightbox */}
+        {posterEvent?.posterImage && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+            onClick={() => setPosterEvent(null)}
+          >
+            <div
+              className="relative max-w-lg w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={posterEvent.posterImage}
+                alt={`${posterEvent.title} Poster`}
+                width={600}
+                height={850}
+                className="w-full rounded-2xl shadow-2xl"
+              />
+              <button
+                onClick={() => setPosterEvent(null)}
+                className="absolute -top-4 -right-4 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-700 hover:bg-gray-100 transition-colors font-bold text-lg"
+                aria-label="Close poster"
+              >
+                ✕
+              </button>
+            </div>
+          </div>
+        )}
       </main>
     </>
   );
